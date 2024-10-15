@@ -8,17 +8,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <img src="./static/images/icon.png" alt="Icon" style="height: 10em; margin-left: 100px; margin-top: 100px"> -->
   <title>
-    OneActor: Consistent Subject Generation via Cluster-Conditioned Guidance
+    OneActor
   </title>
   <style>
     body {
         /* 设置背景图片 */
         /* width:100vw; */
-        height: 80vh;
-        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 1) 100%), url('./static/images/bg.jpg');
+        height: 1200px;
+        background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.6) 0%, rgba(255, 255, 255, 0) 100%), url('./static/images/bg.jpg');
         background-size: cover;
         /* background-position: center; */
         background-repeat: no-repeat;
+    }
+    .hero-body .author-block{
+      color: rgb(255, 255, 255) !important; /* 确保标题、文本和链接也变成白色 */
     }
   </style>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -64,7 +67,7 @@
         <div class="column has-text-centered">
           <br>
           <br>
-          <h1 class="title is-1 publication-title" style="color: rgb(0, 0, 0);">OneActor: Consistent Subject Generation via Cluster-Conditioned Guidance</h1>
+          <h1 class="title is-1 publication-title" style="color: rgb(255, 255, 255);">OneActor: Consistent Subject Generation via Cluster-Conditioned Guidance</h1>
           <div class="is-size-5 publication-authors">
             <strong>
             <span class="author-block">
@@ -83,7 +86,7 @@
               <a href="https://scholar.google.com/citations?hl=en&user=VSRnUiUAAAAJ">Mengmeng Wang</a><sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
             <span class="author-block">
-              <a href="https://gr.xjtu.edu.cn/web/gongtl/home">Tieliang Gong</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://gr.xjtu.edu.cn/web/gongtl/home" style="color: white;">Tieliang Gong</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
             <span class="author-block">
               <a href="https://openreview.net/profile?id=~Guang_Dai1">Guang Dai</a><sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -159,8 +162,8 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/teaser.jpg" alt="Teaser Image" style="width: 100%; height: auto;">
-      <h2 class="subtitle has-text-centered">
+      <img src="./static/images/teaser.jpg" alt="Teaser Image" style="width: 100%; height: auto; border: 2px solid black; border-radius: 5px;">
+      <h2 class="subtitle has-text-centered"  style="color: rgb(255, 255, 255);">
         OneActor, with a quick tuning, provides an extra cluster guidance and generates images from the same target sub-cluster that show a consistent identity.
       </h2>
     </div>
