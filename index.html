@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="OneActor: Consistent Subject Generation via Cluster-Conditioned Guidance">
+        content="SpotActor: Training-Free Layout-Controlled Consistent Image Generation">
   <meta name="keywords" content="Diffusion model, text-to-image generation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <img src="./static/images/icon.png" alt="Icon" style="height: 10em; margin-left: 100px; margin-top: 100px"> -->
   <title>
-    OneActor
+    SpotActor
   </title>
   <style>
     body {
@@ -42,7 +42,9 @@
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
@@ -57,6 +59,14 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <style>
+    body {
+      font-family: "Roboto", Times, serif;
+    }
+    h1 {
+      font-family: "Courier New", Courier, monospace;
+    }
+  </style>
 </head>
 
 <body>
@@ -67,7 +77,7 @@
         <div class="column has-text-centered">
           <br>
           <br>
-          <h1 class="title is-1 publication-title" style="color: rgb(255, 255, 255);">OneActor: Consistent Subject Generation via Cluster-Conditioned Guidance</h1>
+          <h1 class="title is-1 publication-title" style="color: rgb(255, 255, 255);">SpotActor: Training-Free Layout-Controlled Consistent Image Generation</h1>
           <div class="is-size-5 publication-authors">
             <strong>
             <span class="author-block">
@@ -77,43 +87,48 @@
               <a href="https://gr.xjtu.edu.cn/web/yancaixia">Caixia Yan</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
             <span class="author-block">
+              <a href="https://gr.xjtu.edu.cn/web/zhangwzh123/">Weizhan Zhang</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
               <a href="https://scholar.google.com/citations?user=GBnV3HIAAAAJ&hl=en&oi=ao">Haonan Lin</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
             <span class="author-block">
-              <a href="https://gr.xjtu.edu.cn/web/zhangwzh123/">Weizhan Zhang</a><sup>1</sup>
+              <a href="https://scholar.google.com/citations?hl=en&user=VSRnUiUAAAAJ">Mengmeng Wang</a><sup>3,4</sup>
             </span><br>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?hl=en&user=VSRnUiUAAAAJ">Mengmeng Wang</a><sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://openreview.net/profile?id=~Guang_Dai1">Guang Dai</a><sup>4</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
             <span class="author-block">
-              <a href="https://gr.xjtu.edu.cn/web/gongtl/home" style="color: white;">Tieliang Gong</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://gr.xjtu.edu.cn/web/gongtl/home">Tieliang Gong</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
             <span class="author-block">
-              <a href="https://openreview.net/profile?id=~Guang_Dai1">Guang Dai</a><sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://openreview.net/profile?id=~Hao_Sun15">Hao Sun</a><sup>5</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
             <span class="author-block">
-              <a href="https://openreview.net/profile?id=~Hao_Sun15">Hao Sun</a><sup>4</sup>
+              <a href="https://scholar.google.com/citations?user=z5SPCmgAAAAJ&hl=en&oi=ao">Jingdong Wang</a><sup>6</sup>
             </span>
             </strong>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Xi'an Jiaotong University</span><br>
-            <span class="author-block"><sup>2</sup>State Key Laboratory of Communication Content Cognition </span><br>
+            <span class="author-block"><sup>2</sup>State Key Laboratory of Communication Content Cognition</span><br>
             <span class="author-block"><sup>3</sup>SGIT AI Lab</span><br>
-            <span class="author-block"><sup>4</sup>China Telecom</span><br>
+            <span class="author-block"><sup>4</sup>Zhejiang University of Technology</span><br>
+            <span class="author-block"><sup>5</sup>China Telecom</span><br>
+            <span class="author-block"><sup>6</sup>Baidu Inc</span><br>
             <span class="author-block"> </span>
           </div>
           
           <div class="is-size-5 publication-authors">
-            <span class="author-block">NeurIPS 2024</span><br>
+            <span class="author-block">AAAI 2025</span><br>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2404.10267"
+                <a href="https://arxiv.org/abs/2409.04801"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -122,7 +137,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2404.10267"
+                <a href="https://arxiv.org/abs/2409.04801"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -131,7 +146,7 @@
                 </a>
               </span>
               <!-- Video Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -139,7 +154,7 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link. -->
               <span class="link-block">
                 <a href=""
@@ -147,7 +162,7 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (Coming Soon)</span>
                   </a>
               </span>
             </div>
@@ -161,10 +176,12 @@
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img src="./static/images/teaser.jpg" alt="Teaser Image" style="width: 100%; height: auto; border: 2px solid black; border-radius: 5px;">
-      <h2 class="subtitle has-text-centered"  style="color: rgb(255, 255, 255);">
-        OneActor, with a quick tuning, provides an extra cluster guidance and generates images from the same target sub-cluster that show a consistent identity.
+    <div class="hero-body" style="text-align: center;">
+      <img src="./static/images/teaser.jpg" alt="Teaser Image" style="width: 70%; height: auto; border: 2px solid black; border-radius: 5px; display: inline-block;">
+      <h2 class="subtitle has-text-centered" style="color: rgb(255, 255, 255); margin: 0 auto; width: fit-content;">
+        SpotActor, given bounding boxes and text prompts of subject
+        and plot descriptions, generates high-quality images where subjects align to the layout as well as share a
+        consistent appearance.
       </h2>
     </div>
   </div>
@@ -179,9 +196,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-          Text-to-image diffusion models benefit artists with high-quality image generation. Yet their stochastic nature hinders artists from creating consistent images of the same subject.
-          For this issue, we propose a novel one-shot tuning paradigm, termed as OneActor. It efficiently performs consistent subject generation solely driven by prompts via a learned semantic guidance to bypass the laborious backbone tuning. We lead the way to formalize the objective of consistent subject generation from a clustering perspective, and thus design a cluster-conditioned model. To mitigate the overfitting challenge shared by one-shot tuning pipelines, we augment the tuning with auxiliary samples and devise two inference strategies: semantic interpolation and cluster guidance. These techniques are later verified to significantly enhance the generation quality. 
-          Comprehensive experiments show that our method outperforms a variety of baselines with satisfactory subject consistency, superior prompt conformity as well as high image quality. Our method is capable of multi-subject generation and compatible with popular diffusion extensions. Besides, we achieve a 4 times faster tuning speed than tuning-based baselines and, if desired, avoid increasing inference time.
+            Text-to-image diffusion models significantly enhance the efficiency of artistic creation with high-fidelity image generation. However, in typical application scenarios like comic book production, they can neither place each subject into its expected spot nor maintain the consistent appearance of each subject across images. For these issues, we pioneer a novel task, Layout-to-Consistent-Image (L2CI) generation, which produces consistent and compositional images in accordance with the given layout conditions and text prompts. To accomplish this challenging task, we present a new formalization of dual energy guidance with optimization in a dual semantic-latent space and thus propose a training-free pipeline, SpotActor, which features a layout-conditioned backward update stage and a consistent forward sampling stage. In the backward stage, we innovate a nuanced layout energy function to mimic the attention activations with a sigmoid-like objective. While in the forward stage, we design Regional Interconnection Self-Attention (RISA) and Semantic Fusion Cross-Attention (SFCA) mechanisms that allow mutual interactions across images. To evaluate the performance, we present ActorBench, a specified benchmark with hundreds of reasonable prompt-box pairs stemming from object detection datasets. Comprehensive experiments are conducted to demonstrate the effectiveness of our method. The results prove that SpotActor fulfills the expectations of this task and showcases the potential for practical applications with superior layout alignment, subject consistency, prompt conformity and background diversity.
         </div>
       </div>
     </div>
@@ -196,60 +211,26 @@
 
 <section class="section"></section>
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered has-text-centered" style="max-width: 700px; margin: 0 auto;">
       <div class="column">
-        <h2 class="title is-3" style="color: white; background: linear-gradient(to right, rgba(199, 3, 62, 0.719), rgba(3, 70, 196, 0.658)); padding: 20px;">Performance</h2>
-        <div style="width: 50%; margin: 0 auto;"><h2 class="title is-4" style="color: rgb(134, 134, 134); background: linear-gradient(to left, rgba(199, 3, 62, 0.15), rgba(3, 71, 196, 0.15)); padding: 10px;">Single Subject Generation</h2>
-        </div>
+        <h2 class="title is-3" style="color: white; background: linear-gradient(to right, rgba(199, 3, 62, 0.719), rgba(3, 70, 196, 0.658)); padding: 20px;">Performance Comparison</h2>
         <br>
         <div class="content has-text-justified">
           
-          <div style="text-align: center;">
-          <img src="./static/images/single0.jpg" style="width: 70%; height: auto;"></div>
-          <br>
           <img src="./static/images/single.jpg" style="width: 100%; height: auto;">
           </div>
-
-          <div style="width: 50%; margin: 0 auto;"><h2 class="title is-4" style="color: rgb(134, 134, 134); background: linear-gradient(to left, rgba(199, 3, 62, 0.15), rgba(3, 71, 196, 0.15)); padding: 10px;">Multiple Subjects Generation</h2>
+          <br><br>
+        <h2 class="title is-3" style="color: white; background: linear-gradient(to right, rgba(199, 3, 62, 0.719), rgba(3, 70, 196, 0.658)); padding: 20px;">SpotActor Gallery</h2>
+          <div class="content has-text-justified">
+          <img src="./static/images/more.jpg" style="width:100%; height:auto">
           </div>
-          <br>
-          <img src="./static/images/multi.jpg" style="width:100%; height:auto">
-          </div>
+          <div class="content has-text-justified">
+            <img src="./static/images/multi.jpg" style="width:100%; height:auto">
+            </div>
       </div>
     </div>
 <br><br>
-<div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-        <div class="column">
-            <h2 class="title is-3" style="color: white; background: linear-gradient(to right, rgba(199, 3, 62, 0.719), rgba(3, 70, 196, 0.658)); padding: 20px;">
-                Application
-            </h2>
-            <div style="width: 50%; margin: 0 auto;"><h2 class="title is-4" style="color: rgb(134, 134, 134); background: linear-gradient(to left, rgba(199, 3, 62, 0.15), rgba(3, 71, 196, 0.15)); padding: 10px;">Storybook Creation</h2>
-            </div>
-            <div class="content has-text-justified">
-                
-                <img src="./static/images/story.jpg" style="width: 100%; height: auto;">
-                <br>
-                <div class="columns is-centered">
-                    <div class="column is-half">
-                      <div style="width: 65%; margin: 0 auto; text-align: center; padding-top: 10%"><h2 class="title is-4" style="color: rgb(134, 134, 134); background: linear-gradient(to left, rgba(199, 3, 62, 0.15), rgba(3, 71, 196, 0.15)); padding: 10px;">Style Transfer</h2>
-                      </div>
-                        <div style="text-align: center;">
-                            <img src="./static/images/style.jpg" style="width: 100%; height: auto; padding-top: 0%">
-                        </div>
-                    </div>
-                    <div class="column is-half">
-                      <div style="width: 65%; margin: 0 auto; text-align: center;"><h2 class="title is-4" style="color: rgb(134, 134, 134); background: linear-gradient(to left, rgba(199, 3, 62, 0.15), rgba(3, 71, 196, 0.15)); padding: 10px;">Pose Control</h2>
-                      </div>
-                        <div style="text-align: center;">
-                            <img src="./static/images/pose.jpg" style="width: 100%; height: auto;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 
 
@@ -257,11 +238,19 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{wang2024oneactor,
-      title={OneActor: Consistent Character Generation via Cluster-Conditioned Guidance},
-      author={Wang, Jiahao and Yan, Caixia and Lin, Haonan and Zhang, Weizhan},
-      journal={Advances in Neural Information Processing Systems},
-      year={2024}
+    <pre><code>@inproceedings{spotactor,
+      author  =   {Jiahao Wang,
+                  Caixia Yan,
+                  Weizhan Zhang,
+                  Haonan Lin,
+                  Mengmeng Wang,
+                  Guang Dai,
+                  Tieliang Gong,
+                  Hao Sun,
+                  Jingdong Wang},
+      title     = {SpotActor: Training-Free Layout-Controlled Consistent Image Generation},
+      booktitle = {AAAI Conference on Artificial Intelligence},
+      year      = {2024},
     }</code></pre>
   </div>
 </section>
